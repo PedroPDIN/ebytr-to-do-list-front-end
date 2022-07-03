@@ -1,12 +1,7 @@
-import React from 'react';
-import COMPONENTS from '../components';
+import ListTask from './ListTask';
 
-const Main = () => {
-  return (
-    <main>
-      <COMPONENTS.NewTask />
-    </main>
-  );
+const PAGES = {
+  ListTask,
 };
 
-export default Main;
+export default PAGES;

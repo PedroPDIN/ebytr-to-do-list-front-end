@@ -1,10 +1,14 @@
 import React from 'react';
-import Main from './pages';
+import PAGES from './pages';
 import './App.css';
 
+// eslint-disable-next-line arrow-body-style
 const App = () => {
   return (
-    <Main />
+    <main>
+      <PAGES.ListTask />
+    </main>
+
   );
 };
 
