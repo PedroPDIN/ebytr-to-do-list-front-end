@@ -28,6 +28,7 @@ TaskProvider.propTypes = {
   children: PropTypes.node.isRequired,
   // Anything that can be rendered: numbers, strings, elements or an array
   // (or fragment) containing these types.
+  // https://pt-br.reactjs.org/docs/typechecking-with-proptypes.html
 };
 
 export default TaskProvider;
