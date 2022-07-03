@@ -3,12 +3,11 @@ import TaskContext from '../../store/context';
 import COMPONENTS from '../../components';
 
 const ListTask = () => {
-  const { lists } = useContext(TaskContext);
+  const { newTask, lists } = useContext(TaskContext);
 
   return (
     <div>
-
-      <COMPONENTS.NewTask />
+      {!newTask ? (<COMPONENTS.ButtonNewTask />) : (<COMPONENTS.NewTask />)}
 
       {lists.map(({ task, creation_date: currentDate, state }) => (
         <div>

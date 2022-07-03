@@ -23,9 +23,10 @@ const TaskProvider = ({ children }) => {
     ]);
     setTask('');
     setStateTask('');
+    setNewTask(false);
   };
 
-  const newTasks = () => setNewTask(newTask === true);
+  const addNewTasks = () => setNewTask(true);
 
   // eslint-disable-next-line react/jsx-no-constructed-context-values
   const contextValue = {
@@ -40,7 +41,8 @@ const TaskProvider = ({ children }) => {
     handleTask,
     handleState,
     addList,
-    newTasks,
+    addNewTasks,
+    newTask,
   };
 
   return (
