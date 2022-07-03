@@ -1,3 +1,3 @@
-import contextValue from './provider';
+import TaskProvider from './provider';
 
-export default contextValue;
+export default TaskProvider;

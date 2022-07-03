@@ -1,6 +1,11 @@
 import React from 'react';
+import Main from './pages';
 import './App.css';
 
-const App = () => <h1>Hello Word</h1>;
+const App = () => {
+  return (
+    <Main />
+  );
+};
 
 export default App;
