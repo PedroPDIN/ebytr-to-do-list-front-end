@@ -1,12 +1,6 @@
 import React from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div>
-      <h1>Hello Word</h1>
-    </div>
-  );
-}
+const App = () => <h1>Hello Word</h1>;
 
 export default App;
