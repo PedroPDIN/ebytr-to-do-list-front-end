@@ -3,18 +3,40 @@ import PropTypes from 'prop-types';
 import TaskContext from '../context';
 
 const TaskProvider = ({ children }) => {
+  const [lists, setLists] = useState([]);
   const [task, setTask] = useState('');
   const [dateTask, setDateTask] = useState('');
   const [stateTask, setStateTask] = useState('');
 
+  const handleTask = ({ target }) => setTask(target.value);
+  const handleState = ({ target }) => setStateTask(target.value);
+
+  const addList = () => {
+    setLists([
+      ...lists,
+      {
+        task,
+        creation_date: new Date(),
+        state: stateTask,
+      },
+    ]);
+    setTask('');
+    setStateTask('');
+  };
+
   // eslint-disable-next-line react/jsx-no-constructed-context-values
   const contextValue = {
+    lists,
+    setLists,
     task,
     setTask,
     dateTask,
     setDateTask,
     stateTask,
     setStateTask,
+    handleTask,
+    handleState,
+    addList,
   };
 
   return (

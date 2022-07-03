@@ -20,7 +20,7 @@
         "unnamedComponents": "arrow-function"
       }
     ],
-    "arrow-body-style": ["error", "always"],
+    "arrow-body-style": ["error", "as-needed"],
     "react/jsx-curly-spacing": [
       2,
       {
