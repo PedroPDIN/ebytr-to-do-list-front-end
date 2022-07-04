@@ -3,6 +3,45 @@ import styled from 'styled-components';
 const background = '#B9C8C8';
 
 const SNewTak = styled.div`
+@media screen and (min-width: 768px) {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 1em black;
+  padding: 20px;
+  margin: 0px;
+
+  form {
+    display: flex;
+  }
+
+  textarea {
+    background-color: ${background};
+    border-radius: 10px;
+    color: black;
+    font-size: 17px;
+    padding: 5px 0px 0px 5px;
+  }
+
+  .radios {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0px 8px 10px;
+  }
+
+  button {
+    background-color: ${background};
+    top: 230px;
+    right: 480px;
+    padding: 10px;
+    position: fixed;
+    transition: all 0.2s ease-in-out;
+  }
+
+  button:hover {
+    transform: translateY(5px);
+  }
+}
+
 @media screen and (max-width: 768px) {
   background-color: white;
   border-radius: 10px;
@@ -16,6 +55,7 @@ const SNewTak = styled.div`
     color: black;
     font-size: 17px;
     border-radius: 10px;
+    padding: 5px 0px 0px 5px;
   }
 
   .radios {
