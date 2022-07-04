@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import TaskContext from '../../store/context';
+import SButtonNewTask from './styled';
 
 const ButtonNewTask = () => {
   const { addNewTasks } = useContext(TaskContext);
 
   return (
-    <div>
+    <SButtonNewTask>
       <button type="button" onClick={ addNewTasks }>Adicionar tarefa</button>
-    </div>
+    </SButtonNewTask>
   );
 };
 

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import TaskContext from '../../store/context';
+import SNewTask from './styled';
 
 const NewTask = () => {
   const {
@@ -10,7 +11,7 @@ const NewTask = () => {
   } = useContext(TaskContext);
 
   return (
-    <div>
+    <SNewTask>
       <form action="">
         <div>
           <textarea
@@ -22,7 +23,7 @@ const NewTask = () => {
           />
         </div>
 
-        <div>
+        <div className="radios">
           <label htmlFor="pending">
             <input
               type="radio"
@@ -58,7 +59,7 @@ const NewTask = () => {
           <button type="button" onClick={ addList }>Adicionar</button>
         </div>
       </form>
-    </div>
+    </SNewTask>
   );
 };
 

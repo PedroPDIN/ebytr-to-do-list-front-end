@@ -7,6 +7,7 @@ const ListTask = () => {
 
   return (
     <div>
+      <h1>To Do List</h1>
       {!newTask ? (<COMPONENTS.ButtonNewTask />) : (<COMPONENTS.NewTask />)}
 
       {lists.map(({ task, creation_date: currentDate, state }) => (
