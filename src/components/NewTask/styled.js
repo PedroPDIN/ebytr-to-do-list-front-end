@@ -30,10 +30,11 @@ const SNewTak = styled.div`
 
   button {
     background-color: ${background};
-    top: 230px;
-    right: 480px;
+    border-radius: 10px;
     padding: 10px;
     position: fixed;
+    right: 480px;
+    top: 230px;
     transition: all 0.2s ease-in-out;
   }
 
