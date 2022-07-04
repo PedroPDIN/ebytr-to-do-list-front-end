@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 const SButtonNewTask = styled.div`
+  display: flex;
+  justify-content: center;
+  
   button {
   border-radius: 10px;
   box-shadow: inset 0 0 0 0 #54b3d6;
