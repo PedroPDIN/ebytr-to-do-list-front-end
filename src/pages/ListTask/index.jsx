@@ -6,12 +6,17 @@ import SListTask from './styled';
 const ListTask = () => {
   const { newTask, lists } = useContext(TaskContext);
 
+  const dateStructure = (date) => {
+    const justDate = date.slice(0, -14);
+    return justDate.split('-').reverse().join('-');
+  };
+
   return (
     <SListTask>
       <h1>To Do List</h1>
       {!newTask ? (<COMPONENTS.ButtonNewTask />) : (<COMPONENTS.NewTask />)}
 
-      {lists.map(({ task, status }) => (
+      {lists.map(({ task, creation_date: currentDate, status }) => (
         <section>
           <div className="task">
             <p>{ task }</p>
@@ -19,9 +24,9 @@ const ListTask = () => {
 
           <div className="task-info">
             <p>{ status }</p>
-            {/* <p>
-              { `${currentDate.getDate()}-${currentDate.getMonth()}-${currentDate.getFullYear()}` }
-            </p> */}
+            <p>
+              { dateStructure(currentDate) }
+            </p>
           </div>
 
         </section>
