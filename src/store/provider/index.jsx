@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import TaskContext from '../context';
-import getAllTask from '../../services/api';
+import { getAllTask, addTasks } from '../../services/api';
 
 const TaskProvider = ({ children }) => {
   const [lists, setLists] = useState([]);
@@ -12,20 +12,13 @@ const TaskProvider = ({ children }) => {
 
   useEffect(() => {
     getAllTask().then((info) => setLists(info.data));
-  }, []);
+  }, [lists]);
 
   const handleTask = ({ target }) => setTask(target.value);
   const handleState = ({ target }) => setStateTask(target.value);
 
   const addList = () => {
-    setLists([
-      ...lists,
-      {
-        task,
-        creation_date: new Date(),
-        state: stateTask,
-      },
-    ]);
+    addTasks(task, stateTask);
     setTask('');
     setStateTask('');
     setNewTask(false);

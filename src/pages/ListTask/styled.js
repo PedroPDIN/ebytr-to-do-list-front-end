@@ -10,7 +10,7 @@ const SListTask = styled.div`
     background-color: white;
     border-radius: 20px;
     margin-top: 30px;
-    width: 500px;
+    max-width: 500px;
   }
 
   p {
@@ -23,7 +23,7 @@ const SListTask = styled.div`
   }
 
   .task p {
-    width: 100px;
+    max-width: 400px !important;
   }
 
   .task-info {

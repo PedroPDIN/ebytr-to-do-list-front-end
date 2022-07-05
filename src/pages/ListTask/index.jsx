@@ -16,10 +16,12 @@ const ListTask = () => {
       <h1>To Do List</h1>
       {!newTask ? (<COMPONENTS.ButtonNewTask />) : (<COMPONENTS.NewTask />)}
 
-      {lists.map(({ task, creation_date: currentDate, status }) => (
+      {lists.map(({
+        id, task, creation_date: currentDate, status,
+      }, index) => (
         <section>
-          <div className="task">
-            <p>{ task }</p>
+          <div className="task" id={ id }>
+            <p>{`${index} - ${task}`}</p>
           </div>
 
           <div className="task-info">

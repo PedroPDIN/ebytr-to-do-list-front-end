@@ -6,4 +6,12 @@ const getAllTask = () => axios.get(`${URL}/tasks`)
   .then((data) => data)
   .catch((error) => console.log(error));
 
-export default getAllTask;
+const addTasks = (task, status) => {
+  const newTask = { task, status };
+  axios.post(`${URL}/tasks`, newTask);
+};
+
+export {
+  getAllTask,
+  addTasks,
+};
