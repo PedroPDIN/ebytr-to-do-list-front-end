@@ -11,17 +11,17 @@ const ListTask = () => {
       <h1>To Do List</h1>
       {!newTask ? (<COMPONENTS.ButtonNewTask />) : (<COMPONENTS.NewTask />)}
 
-      {lists.map(({ task, creation_date: currentDate, state }) => (
+      {lists.map(({ task, status }) => (
         <section>
           <div className="task">
             <p>{ task }</p>
           </div>
 
           <div className="task-info">
-            <p>{ state }</p>
-            <p>
+            <p>{ status }</p>
+            {/* <p>
               { `${currentDate.getDate()}-${currentDate.getMonth()}-${currentDate.getFullYear()}` }
-            </p>
+            </p> */}
           </div>
 
         </section>

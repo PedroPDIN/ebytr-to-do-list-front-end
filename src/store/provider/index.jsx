@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import TaskContext from '../context';
+import getAllTask from '../../services/api';
 
 const TaskProvider = ({ children }) => {
   const [lists, setLists] = useState([]);
@@ -8,6 +9,10 @@ const TaskProvider = ({ children }) => {
   const [dateTask, setDateTask] = useState('');
   const [stateTask, setStateTask] = useState('');
   const [newTask, setNewTask] = useState(false);
+
+  useEffect(() => {
+    getAllTask().then((info) => setLists(info.data));
+  }, []);
 
   const handleTask = ({ target }) => setTask(target.value);
   const handleState = ({ target }) => setStateTask(target.value);
