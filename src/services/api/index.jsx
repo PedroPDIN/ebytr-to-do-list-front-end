@@ -8,19 +8,17 @@ const addTasks = (task, status) => {
   axios.post(`${URL_EXEMPLE}/tasks`, newTask);
 };
 
-const getAllTask = () => {
-  axios.get(`${URL_EXEMPLE}/tasks`)
-    .then((data) => data)
-    .catch((error) => console.log(error));
-};
+const getAllTask = () => axios.get(`${URL_EXEMPLE}/tasks`)
+  .then((data) => data)
+  .catch((error) => console.log(error));
 
-const updateTasks = (id, task, status) => {
+/* const updateTasks = (id, task, status) => {
   const newTask = { task, status };
   axios.put(`${URL_EXEMPLE}/tasks/${id}`, newTask);
-};
+}; */
 
 export {
   getAllTask,
   addTasks,
-  updateTasks,
+  /* updateTasks, */
 };

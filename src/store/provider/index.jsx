@@ -4,6 +4,7 @@ import TaskContext from '../context';
 import { getAllTask, addTasks } from '../../services/api';
 
 const TaskProvider = ({ children }) => {
+  const [idUpdated, setIdUpdated] = useState(0);
   const [lists, setLists] = useState([]);
   const [task, setTask] = useState('');
   const [dateTask, setDateTask] = useState('');
@@ -18,6 +19,11 @@ const TaskProvider = ({ children }) => {
 
   const handleTask = ({ target }) => setTask(target.value);
   const handleState = ({ target }) => setStateTask(target.value);
+
+  const getIdUpdate = (id) => {
+    console.log(id);
+    setIdUpdated(id);
+  };
 
   const addList = () => {
     addTasks(task, stateTask);
@@ -43,6 +49,8 @@ const TaskProvider = ({ children }) => {
     addList,
     addNewTasks,
     newTask,
+    getIdUpdate,
+    idUpdated,
   };
 
   return (
