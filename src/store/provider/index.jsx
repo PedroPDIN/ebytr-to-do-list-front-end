@@ -11,8 +11,10 @@ const TaskProvider = ({ children }) => {
   const [newTask, setNewTask] = useState(false);
 
   useEffect(() => {
-    getAllTask().then((info) => setLists(info.data));
-  }, [lists]);
+    setTimeout(() => {
+      getAllTask().then((info) => setLists(info.data));
+    }, 1000);
+  }, [newTask]);
 
   const handleTask = ({ target }) => setTask(target.value);
   const handleState = ({ target }) => setStateTask(target.value);

@@ -19,9 +19,9 @@ const ListTask = () => {
       {lists.map(({
         id, task, creation_date: currentDate, status,
       }, index) => (
-        <section>
-          <div className="task" id={ id }>
-            <p>{`${index} - ${task}`}</p>
+        <section key={ id }>
+          <div className="task">
+            <p>{`${index + 1} - ${task}`}</p>
           </div>
 
           <div className="task-info">
@@ -30,7 +30,6 @@ const ListTask = () => {
               { dateStructure(currentDate) }
             </p>
           </div>
-
         </section>
       ))}
     </SListTask>
