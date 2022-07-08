@@ -33,22 +33,24 @@ const ListTask = () => {
             <p>{ dateStructure(currentDate) }</p>
           </div>
 
-          <button
-            className="edit-task"
-            id={ id }
-            onClick={ () => getIdUpdate(id) }
-            type="button"
-          >
-            {isUpdate ? <AiOutlineArrowDown /> : <AiTwotoneEdit />}
-          </button>
-          <button
-            className="delete-task"
-            id={ id }
-            onClick={ () => getIdDelete(id) }
-            type="button"
-          >
-            <AiTwotoneDelete />
-          </button>
+          <div className="task-buttons">
+            <button
+              className="edit-task"
+              id={ id }
+              onClick={ () => getIdUpdate(id) }
+              type="button"
+            >
+              {isUpdate ? <AiOutlineArrowDown className="task-icon" /> : <AiTwotoneEdit className="task-icon" />}
+            </button>
+            <button
+              className="delete-task"
+              id={ id }
+              onClick={ () => getIdDelete(id) }
+              type="button"
+            >
+              <AiTwotoneDelete className="task-icon" />
+            </button>
+          </div>
 
           <div>
             {isUpdate && <COMPONENTS.EditTask />}
