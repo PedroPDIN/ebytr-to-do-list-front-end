@@ -1,40 +1,62 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import TaskContext from '../context';
-import { getAllTask, addTasks } from '../../services/api';
+import {
+  getAllTask,
+  addTasks,
+  updateTasks,
+  deleteTask,
+} from '../../services/api';
 
 const TaskProvider = ({ children }) => {
   const [idUpdated, setIdUpdated] = useState(0);
-  const [idDelete, setIdDelete] = useState(0);
+  const [idDeleted, setIdDeleted] = useState(0);
+  const [isUpdate, setIsUpdate] = useState(false);
+  const [optionDelete, setOptionDelete] = useState(false);
   const [lists, setLists] = useState([]);
   const [task, setTask] = useState('');
-  const [dateTask, setDateTask] = useState('');
-  const [stateTask, setStateTask] = useState('');
+  const [statusTask, setStatusTask] = useState('');
   const [newTask, setNewTask] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
       getAllTask().then((info) => setLists(info.data));
     }, 1000);
-  }, [newTask]);
+  }, [newTask, isUpdate, optionDelete]);
 
   const handleTask = ({ target }) => setTask(target.value);
-  const handleState = ({ target }) => setStateTask(target.value);
+  const handleState = ({ target }) => setStatusTask(target.value);
 
   const getIdUpdate = (id) => {
     setIdUpdated(id);
+    setIsUpdate(true);
   };
 
   const getIdDelete = (id) => {
-    setIdDelete(id);
+    setIdDeleted(id);
+    setOptionDelete(true);
   };
 
+  const getDelete = () => {
+    deleteTask(idDeleted);
+    setOptionDelete(false);
+  };
+
+  const notDelete = () => setOptionDelete(false);
+
   const addList = () => {
-    addTasks(task, stateTask);
+    addTasks(task, statusTask);
     setTask('');
-    setStateTask('');
+    setStatusTask('');
     setNewTask(false);
   };
+
+  const editTask = () => {
+    updateTasks(idUpdated, task, statusTask);
+    setIsUpdate(false);
+  };
+
+  const notEditTask = () => setIsUpdate(false);
 
   const addNewTasks = () => setNewTask(true);
 
@@ -44,10 +66,8 @@ const TaskProvider = ({ children }) => {
     setLists,
     task,
     setTask,
-    dateTask,
-    setDateTask,
-    stateTask,
-    setStateTask,
+    statusTask,
+    setStatusTask,
     handleTask,
     handleState,
     addList,
@@ -56,7 +76,13 @@ const TaskProvider = ({ children }) => {
     getIdUpdate,
     idUpdated,
     getIdDelete,
-    idDelete,
+    getDelete,
+    notDelete,
+    isUpdate,
+    setIsUpdate,
+    editTask,
+    notEditTask,
+    optionDelete,
   };
 
   return (

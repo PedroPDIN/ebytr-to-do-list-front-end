@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { AiTwotoneEdit, AiTwotoneDelete } from 'react-icons/ai';
+import { AiTwotoneEdit, AiTwotoneDelete, AiOutlineArrowDown } from 'react-icons/ai';
 import TaskContext from '../../store/context';
 import COMPONENTS from '../../components';
 import SListTask from './styled';
@@ -10,6 +10,7 @@ const ListTask = () => {
     lists,
     getIdUpdate,
     getIdDelete,
+    isUpdate,
   } = useContext(TaskContext);
 
   const dateStructure = (date) => {
@@ -38,7 +39,7 @@ const ListTask = () => {
             onClick={ () => getIdUpdate(id) }
             type="button"
           >
-            <AiTwotoneEdit />
+            {isUpdate ? <AiOutlineArrowDown /> : <AiTwotoneEdit />}
           </button>
           <button
             className="delete-task"
@@ -48,6 +49,11 @@ const ListTask = () => {
           >
             <AiTwotoneDelete />
           </button>
+
+          <div>
+            {isUpdate && <COMPONENTS.EditTask />}
+            <COMPONENTS.DeleteTask />
+          </div>
         </section>
       ))}
     </SListTask>

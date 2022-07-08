@@ -12,13 +12,18 @@ const getAllTask = () => axios.get(`${URL_EXEMPLE}/tasks`)
   .then((data) => data)
   .catch((error) => console.log(error));
 
-/* const updateTasks = (id, task, status) => {
+const updateTasks = (id, task, status) => {
   const newTask = { task, status };
   axios.put(`${URL_EXEMPLE}/tasks/${id}`, newTask);
-}; */
+};
+
+const deleteTask = (id) => {
+  axios.delete(`${URL_EXEMPLE}/tasks/${id}`);
+};
 
 export {
   getAllTask,
   addTasks,
-  /* updateTasks, */
+  updateTasks,
+  deleteTask,
 };
