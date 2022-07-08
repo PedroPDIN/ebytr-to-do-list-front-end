@@ -89,7 +89,6 @@ const SListTask = styled.div`
     text-align: center;
   }
 
-
   .task-info p:nth-child(2) {
     background-color: black;
     border: 1px solid black;
@@ -99,7 +98,6 @@ const SListTask = styled.div`
     padding: 5px;
     text-align: center;
   }
-
   
   .task-buttons {
     align-items: flex-end;
