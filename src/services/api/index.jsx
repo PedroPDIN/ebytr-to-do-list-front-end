@@ -9,8 +9,7 @@ const addTasks = (task, status) => {
 };
 
 const getAllTask = () => axios.get(`${URL_EXEMPLE}/tasks`)
-  .then((data) => data)
-  .catch((error) => console.log(error));
+  .then((data) => data);
 
 const updateTasks = (id, task, status) => {
   const newTask = { task, status };
