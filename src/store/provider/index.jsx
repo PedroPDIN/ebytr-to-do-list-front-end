@@ -5,6 +5,7 @@ import { getAllTask, addTasks } from '../../services/api';
 
 const TaskProvider = ({ children }) => {
   const [idUpdated, setIdUpdated] = useState(0);
+  const [idDelete, setIdDelete] = useState(0);
   const [lists, setLists] = useState([]);
   const [task, setTask] = useState('');
   const [dateTask, setDateTask] = useState('');
@@ -21,8 +22,11 @@ const TaskProvider = ({ children }) => {
   const handleState = ({ target }) => setStateTask(target.value);
 
   const getIdUpdate = (id) => {
-    console.log(id);
     setIdUpdated(id);
+  };
+
+  const getIdDelete = (id) => {
+    setIdDelete(id);
   };
 
   const addList = () => {
@@ -51,6 +55,8 @@ const TaskProvider = ({ children }) => {
     newTask,
     getIdUpdate,
     idUpdated,
+    getIdDelete,
+    idDelete,
   };
 
   return (

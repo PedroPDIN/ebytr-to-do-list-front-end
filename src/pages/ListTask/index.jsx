@@ -5,7 +5,12 @@ import COMPONENTS from '../../components';
 import SListTask from './styled';
 
 const ListTask = () => {
-  const { newTask, lists, getIdUpdate } = useContext(TaskContext);
+  const {
+    newTask,
+    lists,
+    getIdUpdate,
+    getIdDelete,
+  } = useContext(TaskContext);
 
   const dateStructure = (date) => {
     const justDate = date.slice(0, -14);
@@ -28,14 +33,21 @@ const ListTask = () => {
           </div>
 
           <button
-            type="button"
             className="edit-task"
             id={ id }
             onClick={ () => getIdUpdate(id) }
+            type="button"
           >
             <AiTwotoneEdit />
           </button>
-          <div className="delete-task"><AiTwotoneDelete /></div>
+          <button
+            className="delete-task"
+            id={ id }
+            onClick={ () => getIdDelete(id) }
+            type="button"
+          >
+            <AiTwotoneDelete />
+          </button>
         </section>
       ))}
     </SListTask>
