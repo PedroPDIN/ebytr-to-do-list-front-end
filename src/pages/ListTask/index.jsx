@@ -26,7 +26,7 @@ const ListTask = () => {
       {lists.map(({
         id, task, status, creation_date: currentDate,
       }, index) => (
-        <section key={ id }>
+        <article key={ id }>
           <div className="task"><p>{`${index + 1} - ${task}`}</p></div>
           <div className="task-info">
             <p>{ status }</p>
@@ -56,7 +56,7 @@ const ListTask = () => {
             {isUpdate && <COMPONENTS.EditTask />}
             <COMPONENTS.DeleteTask />
           </div>
-        </section>
+        </article>
       ))}
     </SListTask>
   );
