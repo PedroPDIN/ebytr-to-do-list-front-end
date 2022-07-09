@@ -15,8 +15,8 @@ const SListTask = styled.div`
   }
 
   p {
-    margin-left: 10px;
     font-size: 20px;
+    margin-left: 10px;
     text-align: center;
   }
 
@@ -33,6 +33,7 @@ const SListTask = styled.div`
   }
 
   .task-info {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,10 +68,11 @@ const SListTask = styled.div`
   }
   
   .task-buttons button {
-    margin: 0px 5px 20px 5px;
     border-radius: 8px;
-    width: 50px;
+    cursor: pointer;
+    margin: 0px 5px 20px 5px;
     transition: all 0.2s ease-in-out;
+    width: 50px;
   }
 
   .task-buttons button:hover {
@@ -123,6 +125,7 @@ const SListTask = styled.div`
   }
 
   .task-info {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -151,6 +154,7 @@ const SListTask = styled.div`
   }
   
   .task-buttons {
+    cursor: pointer;
     align-items: flex-end;
     display: flex;
     justify-content: center;

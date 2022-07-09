@@ -20,8 +20,9 @@ const SFormNewTask = styled.form`
     flex-direction: column;
     margin: 8px 0px
   }
-
+  
   .radios input {
+    cursor: pointer;
     margin: 8px 8px;
   }
 
@@ -32,6 +33,7 @@ const SFormNewTask = styled.form`
   }
 
   .newTask-buttons button {
+    cursor: pointer;
     font-size: 21px;
   }
 
@@ -42,7 +44,8 @@ const SFormNewTask = styled.form`
   }
 
   .newTask-buttons button:nth-child(1):hover {
-    background-color: #28F551;
+    background-color: #DCE0DE;
+    border: 1px solid black;
     transform: translateY(-6px);
   }
 
@@ -54,8 +57,9 @@ const SFormNewTask = styled.form`
   }
 
   .newTask-buttons button:nth-child(2):hover {
-    transform: translateY(6px);
-    background-color: #FD512A;
+    background-color: #DCE0DE;
+    border: 1px solid black;
+    transform: translateY(3px);
   }
 };
 
@@ -80,6 +84,7 @@ const SFormNewTask = styled.form`
   }
 
   .radios input {
+    cursor: pointer;
     margin: 8px 8px;
   }
 
@@ -90,6 +95,7 @@ const SFormNewTask = styled.form`
   }
 
   .newTask-buttons button {
+    cursor: pointer;
     background-color: white;
     font-size: 21px;
   }
