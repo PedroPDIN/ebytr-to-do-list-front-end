@@ -1,17 +1,37 @@
 import React, { useContext } from 'react';
+import Modal from 'react-modal';
 import TaskContext from '../../store/context';
+
+Modal.setAppElement('#root');
 
 const EditTask = () => {
   const {
-    notEditTask,
     task,
     handleTask,
     handleState,
     editTask,
+    modalIsOpen,
+    closeModal,
   } = useContext(TaskContext);
 
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
+
   return (
-    <div>
+    <Modal
+      isOpen={ modalIsOpen }
+      onRequestClose={ closeModal }
+      style={ customStyles }
+      contentLabel="Example Modal"
+    >
       <form action="">
         <div>
           <textarea
@@ -57,10 +77,10 @@ const EditTask = () => {
 
         <div>
           <button type="button" onClick={ editTask }>Alterar</button>
-          <button type="button" onClick={ notEditTask }>Cancelar</button>
+          <button type="button" onClick={ closeModal }>Cancelar</button>
         </div>
       </form>
-    </div>
+    </Modal>
   );
 };
 

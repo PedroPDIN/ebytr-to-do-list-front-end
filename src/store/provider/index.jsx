@@ -11,25 +11,33 @@ import {
 const TaskProvider = ({ children }) => {
   const [idUpdated, setIdUpdated] = useState(0);
   const [idDeleted, setIdDeleted] = useState(0);
-  const [isUpdate, setIsUpdate] = useState(false);
   const [optionDelete, setOptionDelete] = useState(false);
   const [lists, setLists] = useState([]);
   const [task, setTask] = useState('');
   const [statusTask, setStatusTask] = useState('');
   const [newTask, setNewTask] = useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
 
   useEffect(() => {
     setTimeout(() => {
       getAllTask().then((info) => setLists(info.data));
     }, 1000);
-  }, [newTask, isUpdate, optionDelete]);
+  }, [newTask, modalIsOpen, optionDelete]);
 
   const handleTask = ({ target }) => setTask(target.value);
   const handleState = ({ target }) => setStatusTask(target.value);
 
   const getIdUpdate = (id) => {
     setIdUpdated(id);
-    setIsUpdate(true);
+    openModal();
   };
 
   const getIdDelete = (id) => {
@@ -53,10 +61,8 @@ const TaskProvider = ({ children }) => {
 
   const editTask = () => {
     updateTasks(idUpdated, task, statusTask);
-    setIsUpdate(false);
+    closeModal();
   };
-
-  const notEditTask = () => setIsUpdate(false);
 
   const addNewTasks = () => setNewTask(true);
 
@@ -78,11 +84,11 @@ const TaskProvider = ({ children }) => {
     getIdDelete,
     getDelete,
     notDelete,
-    isUpdate,
-    setIsUpdate,
     editTask,
-    notEditTask,
     optionDelete,
+    modalIsOpen,
+    openModal,
+    closeModal,
   };
 
   return (
