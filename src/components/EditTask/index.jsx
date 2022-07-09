@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Modal from 'react-modal';
 import TaskContext from '../../store/context';
+import SFormNewTask from './styled';
 
 Modal.setAppElement('#root');
 
@@ -32,7 +33,7 @@ const EditTask = () => {
       style={ customStyles }
       contentLabel="Example Modal"
     >
-      <form action="">
+      <SFormNewTask>
         <div>
           <textarea
             name="text-task"
@@ -75,11 +76,11 @@ const EditTask = () => {
           </label>
         </div>
 
-        <div>
+        <div className="newTask-buttons">
           <button type="button" onClick={ editTask }>Alterar</button>
           <button type="button" onClick={ closeModal }>Cancelar</button>
         </div>
-      </form>
+      </SFormNewTask>
     </Modal>
   );
 };

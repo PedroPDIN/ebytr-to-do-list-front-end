@@ -60,7 +60,6 @@ const SListTask = styled.div`
     width: 200px;
   }
 
-  // ======================
   .task-buttons {
     align-items: flex-end;
     display: flex;
