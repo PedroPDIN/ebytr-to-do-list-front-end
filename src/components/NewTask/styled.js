@@ -1,41 +1,46 @@
 import styled from 'styled-components';
 
-const background = '#B9C8C8';
-
 const SNewTak = styled.div`
 @media screen and (min-width: 768px) {
+  align-items: center;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 1em black;
+  display: flex;
+  flex-direction: column;
   padding: 20px;
   margin: 0px;
 
-  form {
-    display: flex;
-  }
-
   textarea {
-    background-color: ${background};
+    background-color: #B9C8C8;
     border-radius: 10px;
     color: black;
     font-size: 17px;
     padding: 5px 0px 0px 5px;
+    width: 40em;
   }
 
   .radios {
     display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+    margin: 20px 0px 8px 10px;
+  }
+
+  .container-button {
+    display: flex;
     flex-direction: column;
-    margin: 30px 0px 8px 10px;
+    align-items: center;
   }
 
   button {
-    background-color: ${background};
+    background-color: #B9C8C8;
     border-radius: 10px;
-    padding: 10px;
-    position: fixed;
-    right: 480px;
-    top: 230px;
+    font-size: 20px;
+    margin-top: 10px;
+    padding: 4px 0px 4px 0px;
     transition: all 0.2s ease-in-out;
+    width: 70%;
   }
 
   button:hover {
@@ -44,15 +49,18 @@ const SNewTak = styled.div`
 }
 
 @media screen and (max-width: 768px) {
+  align-items: center;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 1em black;
-  height: 282px;
+  display: flex;
+  flex-direction: column;
+  height: 330px;
   padding: 20px;
   margin: 0px;
 
   textarea {
-    background-color: ${background};
+    background-color: #B9C8C8;
     color: black;
     font-size: 17px;
     border-radius: 10px;
@@ -61,17 +69,25 @@ const SNewTak = styled.div`
 
   .radios {
     display: flex;
-    justify-content: space-around;
-    margin: 8px 0px 8px 0px;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    margin: 8px 0px;
+  }
+
+  .container-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   button {
-    background-color: ${background};
-    display: flex;
-    justify-content: center;
+    background-color: #B9C8C8;
+    border-radius: 10px;
+    font-size: 20px;
     padding: 4px 0px 4px 0px;
-    width: 100%;
     transition: all 0.2s ease-in-out;
+    width: 70%;
   }
 
   button:hover {

@@ -55,7 +55,7 @@ const NewTask = () => {
           </label>
         </div>
 
-        <div>
+        <div className="container-button">
           <button type="button" onClick={ addList }>Adicionar</button>
         </div>
       </form>
