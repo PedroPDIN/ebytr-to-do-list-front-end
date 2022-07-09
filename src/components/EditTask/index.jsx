@@ -12,7 +12,7 @@ const EditTask = () => {
     handleState,
     editTask,
     modalIsOpenUpdate,
-    closeModal,
+    closeModalUpdate,
   } = useContext(TaskContext);
 
   const customStyles = {
@@ -29,7 +29,7 @@ const EditTask = () => {
   return (
     <Modal
       isOpen={ modalIsOpenUpdate }
-      onRequestClose={ closeModal }
+      onRequestClose={ closeModalUpdate }
       style={ customStyles }
       contentLabel="Example Modal"
     >
@@ -78,7 +78,7 @@ const EditTask = () => {
 
         <div className="newTask-buttons">
           <button type="button" onClick={ editTask }>Alterar</button>
-          <button type="button" onClick={ closeModal }>Cancelar</button>
+          <button type="button" onClick={ closeModalUpdate }>Cancelar</button>
         </div>
       </SFormNewTask>
     </Modal>

@@ -18,22 +18,6 @@ const TaskProvider = ({ children }) => {
   const [statusTask, setStatusTask] = useState('');
   const [newTask, setNewTask] = useState(false);
 
-  const openModal = () => {
-    setIsOpenUpdate(true);
-  };
-
-  const closeModal = () => {
-    setIsOpenUpdate(false);
-  };
-
-  const openModalDelete = () => {
-    setIsOpenDelete(true);
-  };
-
-  const closeModalDelete = () => {
-    setIsOpenDelete(false);
-  };
-
   useEffect(() => {
     setTimeout(() => {
       getAllTask().then((info) => setLists(info.data));
@@ -43,9 +27,23 @@ const TaskProvider = ({ children }) => {
   const handleTask = ({ target }) => setTask(target.value);
   const handleState = ({ target }) => setStatusTask(target.value);
 
+  const addList = () => {
+    addTasks(task, statusTask);
+    setTask('');
+    setStatusTask('');
+    setNewTask(false);
+  };
+
+  const addNewTasks = () => setNewTask(true);
+
+  const openModalUpdate = () => setIsOpenUpdate(true);
+  const closeModalUpdate = () => setIsOpenUpdate(false);
+  const openModalDelete = () => setIsOpenDelete(true);
+  const closeModalDelete = () => setIsOpenDelete(false);
+
   const getIdUpdate = (id) => {
     setIdUpdated(id);
-    openModal();
+    openModalUpdate();
   };
 
   const getIdDelete = (id) => {
@@ -60,19 +58,10 @@ const TaskProvider = ({ children }) => {
 
   const notDelete = () => setIsOpenDelete(false);
 
-  const addList = () => {
-    addTasks(task, statusTask);
-    setTask('');
-    setStatusTask('');
-    setNewTask(false);
-  };
-
   const editTask = () => {
     updateTasks(idUpdated, task, statusTask);
-    closeModal();
+    closeModalUpdate();
   };
-
-  const addNewTasks = () => setNewTask(true);
 
   // eslint-disable-next-line react/jsx-no-constructed-context-values
   const contextValue = {
@@ -94,8 +83,8 @@ const TaskProvider = ({ children }) => {
     notDelete,
     editTask,
     modalIsOpenUpdate,
-    openModal,
-    closeModal,
+    openModalUpdate,
+    closeModalUpdate,
     modalIsOpenDelete,
     closeModalDelete,
     openModalDelete,
