@@ -90,17 +90,19 @@ const SFormNewTask = styled.form`
   }
 
   .newTask-buttons button {
+    background-color: white;
     font-size: 21px;
   }
 
   .newTask-buttons button:nth-child(1) {
     border: 0px;
     border-radius: 10px 10px 0px 0px;
-    transition: all 0.1 ease-in-out, color .5s ease-in-out;
+    transition: all 0.1 ease-in-out;
   }
 
   .newTask-buttons button:nth-child(1):hover {
-    background-color: #28F551;
+    background-color: #DCE0DE;
+    border: 1px solid black;
     transform: translateY(-3px);
   }
 
@@ -112,8 +114,9 @@ const SFormNewTask = styled.form`
   }
 
   .newTask-buttons button:nth-child(2):hover {
+    background-color: #DCE0DE;
+    border: 1px solid black;
     transform: translateY(3px);
-    background-color: #FD512A;
   }
 }
 `;

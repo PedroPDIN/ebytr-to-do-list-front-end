@@ -23,6 +23,8 @@ const EditTask = () => {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
+      backgroundColor: '#DBDBDB',
+      borderRadius: '20px',
     },
   };
 
