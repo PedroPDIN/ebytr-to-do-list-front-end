@@ -6,7 +6,6 @@ const SButtonNewTask = styled.div`
   
   button {
   border-radius: 10px;
-  box-shadow: inset 0 0 0 0 #54b3d6;
   color: black;
   font-size: 20px;
   height: 50px;
@@ -17,7 +16,7 @@ const SButtonNewTask = styled.div`
   }
 
   button:hover {
-    box-shadow: inset 200px 0 0 0 #1C954C;
+    box-shadow: inset 200px 0 0 0 #AEC5C2;
     color: white;
   }
 `;
