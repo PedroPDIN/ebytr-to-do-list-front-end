@@ -11,7 +11,7 @@ const EditTask = () => {
     handleTask,
     handleState,
     editTask,
-    modalIsOpen,
+    modalIsOpenUpdate,
     closeModal,
   } = useContext(TaskContext);
 
@@ -28,7 +28,7 @@ const EditTask = () => {
 
   return (
     <Modal
-      isOpen={ modalIsOpen }
+      isOpen={ modalIsOpenUpdate }
       onRequestClose={ closeModal }
       style={ customStyles }
       contentLabel="Example Modal"

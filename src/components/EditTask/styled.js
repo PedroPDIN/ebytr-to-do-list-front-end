@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const SFormNewTask = styled.form`
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
   display: flex;
   flex-direction: column;
   align-items: center;

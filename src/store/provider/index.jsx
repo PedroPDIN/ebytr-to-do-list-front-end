@@ -11,26 +11,34 @@ import {
 const TaskProvider = ({ children }) => {
   const [idUpdated, setIdUpdated] = useState(0);
   const [idDeleted, setIdDeleted] = useState(0);
-  const [optionDelete, setOptionDelete] = useState(false);
+  const [modalIsOpenUpdate, setIsOpenUpdate] = useState(false);
+  const [modalIsOpenDelete, setIsOpenDelete] = useState(false);
   const [lists, setLists] = useState([]);
   const [task, setTask] = useState('');
   const [statusTask, setStatusTask] = useState('');
   const [newTask, setNewTask] = useState(false);
-  const [modalIsOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
-    setIsOpen(true);
+    setIsOpenUpdate(true);
   };
 
   const closeModal = () => {
-    setIsOpen(false);
+    setIsOpenUpdate(false);
+  };
+
+  const openModalDelete = () => {
+    setIsOpenDelete(true);
+  };
+
+  const closeModalDelete = () => {
+    setIsOpenDelete(false);
   };
 
   useEffect(() => {
     setTimeout(() => {
       getAllTask().then((info) => setLists(info.data));
     }, 1000);
-  }, [newTask, modalIsOpen, optionDelete]);
+  }, [newTask, modalIsOpenUpdate, modalIsOpenDelete]);
 
   const handleTask = ({ target }) => setTask(target.value);
   const handleState = ({ target }) => setStatusTask(target.value);
@@ -42,15 +50,15 @@ const TaskProvider = ({ children }) => {
 
   const getIdDelete = (id) => {
     setIdDeleted(id);
-    setOptionDelete(true);
+    openModalDelete();
   };
 
   const getDelete = () => {
     deleteTask(idDeleted);
-    setOptionDelete(false);
+    setIsOpenDelete(false);
   };
 
-  const notDelete = () => setOptionDelete(false);
+  const notDelete = () => setIsOpenDelete(false);
 
   const addList = () => {
     addTasks(task, statusTask);
@@ -85,10 +93,12 @@ const TaskProvider = ({ children }) => {
     getDelete,
     notDelete,
     editTask,
-    optionDelete,
-    modalIsOpen,
+    modalIsOpenUpdate,
     openModal,
     closeModal,
+    modalIsOpenDelete,
+    closeModalDelete,
+    openModalDelete,
   };
 
   return (
