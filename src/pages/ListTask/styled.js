@@ -25,8 +25,11 @@ const SListTask = styled.div`
   }
 
   .task p {
-    max-width: 95%;
+    border-bottom: solid 2px black;
     font-size: 24px;
+    padding-bottom: 15px;
+    width: 97.4%;
+    word-break: break-all;
   }
 
   .task-info {
@@ -40,6 +43,7 @@ const SListTask = styled.div`
     background-color: #E9F0EB;
     border: 1px solid black;
     border-radius: 10px;
+    margin-top: 0px;
     padding: 5px;
     text-align: center;
     width: 200px;
@@ -112,8 +116,11 @@ const SListTask = styled.div`
   }
   
   .task p {
-    max-width: 95%;
+    border-bottom: solid 2px black;
     font-size: 24px;
+    padding-bottom: 15px;
+    width: 94.5%;
+    word-break: break-all;
   }
 
   .task-info {
@@ -127,6 +134,7 @@ const SListTask = styled.div`
     background-color: #E9F0EB;
     border: 1px solid black;
     border-radius: 10px;
+    margin-top: 0px;
     padding: 5px;
     text-align: center;
     width: 200px;
