@@ -22,6 +22,8 @@ const ListTask = () => {
       <h1>To Do List</h1>
       {!newTask ? (<COMPONENTS.ButtonNewTask />) : (<COMPONENTS.NewTask />)}
 
+      {lists.length < 1 && <h1 style={{ textAlign: 'center' }}>Carregando...</h1>}
+
       {lists.map(({
         id, task, status, creation_date: currentDate,
       }, index) => (
