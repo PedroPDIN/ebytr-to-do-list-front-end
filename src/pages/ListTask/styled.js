@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 const SListTask = styled.div`
 @media screen and (min-width: 768px) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   h1 {
     text-align: center;
   }
@@ -11,11 +14,11 @@ const SListTask = styled.div`
     border-radius: 20px;
     box-shadow: 0 0 1em black;
     margin-top: 30px;
-    width: 50em;
+    width: 35em;
   }
 
   p {
-    font-size: 20px;
+    font-size: 16px;
     margin-left: 10px;
     text-align: center;
   }
@@ -26,7 +29,7 @@ const SListTask = styled.div`
 
   .task p {
     border-bottom: solid 2px black;
-    font-size: 24px;
+    font-size: 20px;
     padding-bottom: 15px;
     width: 97.4%;
     word-break: break-all;
@@ -91,6 +94,70 @@ const SListTask = styled.div`
   .task-icon {
     font-size: 30px;
   }
+
+  .list-tasks-loading {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 56px;
+  }
+
+  .lds-ellipsis {
+    display: inline-block;
+    margin-top: -30px;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: black;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
 }
 
 @media screen and (max-width: 768px) { 
@@ -108,7 +175,7 @@ const SListTask = styled.div`
 
   p {
     margin-left: 10px;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
   }
 
@@ -118,7 +185,7 @@ const SListTask = styled.div`
   
   .task p {
     border-bottom: solid 2px black;
-    font-size: 24px;
+    font-size: 20px;
     padding-bottom: 15px;
     width: 94.5%;
     word-break: break-all;
@@ -182,6 +249,70 @@ const SListTask = styled.div`
 
   .task-icon {
     font-size: 30px;
+  }
+
+  .list-tasks-loading {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 56px;
+  }
+
+  .lds-ellipsis {
+    display: inline-block;
+    margin-top: -30px;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: black;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
   }
 }
 `;
